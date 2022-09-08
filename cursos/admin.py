@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import *
 
-# Register your models here.
+admin.site.register(Matematica)
+admin.site.register(Quimica)
+admin.site.register(Lengua)
