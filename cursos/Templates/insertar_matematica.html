@@ -1,0 +1,17 @@
+{% extends "buscar.html" %}
+
+<head>
+    </head>
+    <body>
+    <h1>
+    MATEMATICA
+    </h1>{% block content %}
+    <form action="insertar_matematica" method="POST">{% csrf_token %}
+        <p>fecha_de_inicio: <input type="text" name="fecha_de_inicio"></p>
+        <p>Profesor: <input type="text" name="profesor"></p>
+        <p>Cantidad_de_clases: <input type="text" name="cantidad_de_clases"> </p>
+        <input type="submit" value="Enviar">
+    
+        </form>
+        {% endblock %}
+        </html>

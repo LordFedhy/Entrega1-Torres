@@ -1,0 +1,43 @@
+<html>
+<head>
+   
+<title>BUSCAR CURSO</title>
+</head>
+<body>
+    
+    <h1>
+    COLEGIO
+
+</h1>{% block content %}
+<form action="buscar" method="POST">{% csrf_token %}
+    <p>Profesor: <input type="text" name="profesor"></p>
+    <input type="submit" value="Enviar">
+    </form>
+    {% if matematicas %}
+    {% for matematica in matematicas %}
+        <li>{{matematica.fecha_de_inicio}}</li>
+        <li>{{matematica.profesor}}</li>
+        <li>{{matematica.cantidad_de_clases}}</li>
+        {% endfor %}
+        <li>tipo: matematica</li>
+    {%endif%}
+    {%if lenguas %}
+    {% for lengua in lenguas %}
+        <li>{{lengua.fecha_de_inicio}}</li>
+        <li>{{lengua.profesor}}</li>
+        <li>{{lengua.cantidad_de_clases}}</li>
+    {% endfor %}
+        <li>tipo: lengua</li>
+    {%endif%}
+    {% if quimicas %}
+    {% for quimica in quimicas %}
+        <li>{{quimica.fecha_de_inicio}}</li>
+        <li>{{quimica.profesor}}</li>
+        <li>{{quimica.cantidad_de_clases}}</li>
+        {% endfor %}
+        <li>tipo: quimica</li>
+        {%endif%}
+    {% endblock %}
+    </body>
+
+</html>
