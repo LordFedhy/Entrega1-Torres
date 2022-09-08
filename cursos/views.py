@@ -1,6 +1,7 @@
 from .models import Matematica, Quimica, Lengua
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.db import models
 
 def buscar(request):
     if request.method == "POST":
@@ -24,6 +25,10 @@ def insertar_matematica(request):
         matematica.save()
         return render(request,"insertar_matematica.html")
     return render(request,"insertar_matematica.html")
+
+    def __str__(self) -> str:
+        return self.profesor
+
 
 def insertar_lengua(request):
     if request.method == "POST":
